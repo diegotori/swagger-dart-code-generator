@@ -11,6 +11,7 @@ GeneratorOptions _$GeneratorOptionsFromJson(Map json) => GeneratorOptions(
       addBasePathToRequests:
           json['add_base_path_to_requests'] as bool? ?? false,
       withConverter: json['with_converter'] as bool? ?? true,
+      withErrorConverter: json['with_error_converter'] as bool? ?? false,
       ignoreHeaders: json['ignore_headers'] as bool? ?? false,
       separateModels: json['separate_models'] as bool? ?? false,
       classesWithNullabeLists:
@@ -104,6 +105,7 @@ Map<String, dynamic> _$GeneratorOptionsToJson(GeneratorOptions instance) =>
       'multipart_file_type': instance.multipartFileType,
       'urlencoded_file_type': instance.urlencodedFileType,
       'with_converter': instance.withConverter,
+      'with_error_converter': instance.withErrorConverter,
       'overriden_models': instance.overridenModels,
       'generate_to_json_for': instance.generateToJsonFor,
       'additional_headers': instance.additionalHeaders,

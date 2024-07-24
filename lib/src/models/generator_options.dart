@@ -9,6 +9,7 @@ class GeneratorOptions {
     this.withBaseUrl = true,
     this.addBasePathToRequests = false,
     this.withConverter = true,
+    this.withErrorConverter = false,
     this.ignoreHeaders = false,
     this.separateModels = false,
     this.classesWithNullabeLists = const [],
@@ -55,6 +56,7 @@ class GeneratorOptions {
   final String multipartFileType;
   final String urlencodedFileType;
   final bool withConverter;
+  final bool withErrorConverter;
   final List<OverridenModelsItem> overridenModels;
   final List<String> generateToJsonFor;
   final List<String> additionalHeaders;

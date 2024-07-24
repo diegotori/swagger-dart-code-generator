@@ -1415,6 +1415,11 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
         ? 'converter: converter ?? \$JsonSerializableConverter(),'
         : 'converter: converter ?? chopper.JsonConverter(),';
 
+    final errorConverterString =
+        options.withConverter && options.withErrorConverter
+            ? 'errorConverter: errorConverter ?? \$JsonSerializableConverter(),'
+            : 'errorConverter: errorConverter,';
+
     final chopperClientBody = '''
     if(client!=null){
       return _\$$className(client);
@@ -1426,7 +1431,7 @@ class SwaggerRequestsGenerator extends SwaggerGeneratorBase {
       interceptors: interceptors ?? [],
       client: httpClient,
       authenticator: authenticator,
-      errorConverter: errorConverter,
+      $errorConverterString
       $baseUrlString);
     return _\$$className(newClient);
 ''';
