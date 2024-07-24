@@ -75,6 +75,7 @@ targets:
 | `with_base_url` | `true` | `false` | If this option is false, generator will ignore base url in swagger file. |
 | `use_required_attribute_for_headers` | `true` | `false` | If this option is false, generator will not add @required attribute to headers. |
 | `with_converter` | `true` | `false` | If option is true, combination of all mappings will be generated. |
+| `with_error_converter` | `false` | `false` | If option and `with_converter` is true, it will set the resulting `errorConverter` to the result of `with_converter`. |
 | `ignore_headers` | `false` | `false` | If option is true, headers will not be generated. |
 | `additional_headers` | `false` | `false` | List of additional headers, not specified in Swagger. Example of usage: [build.yaml](https://github.com/epam-cross-platform-lab/swagger-dart-code-generator/blob/master/example/build.yaml)
 | `enums_case_sensitive` | `true` | `false` | If value is false, 'enumValue' will be defined like Enum.enumValue even it's json key equals 'ENUMVALUE' |
