@@ -42,7 +42,7 @@ abstract class PetServiceYaml extends ChopperService {
         interceptors: interceptors ?? [],
         client: httpClient,
         authenticator: authenticator,
-        errorConverter: errorConverter,
+        errorConverter: errorConverter ?? $JsonSerializableConverter(),
         baseUrl: baseUrl ?? Uri.parse('http://petstore.swagger.io/v2'));
     return _$PetServiceYaml(newClient);
   }
